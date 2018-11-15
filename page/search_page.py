@@ -3,14 +3,9 @@ from selenium.webdriver.common.by import By
 from base.base_action import BaseAction
 
 
-class SearchPage(BaseAction):
+class HomePage(BaseAction):
 
-    search_edit_text = By.ID, "android:id/search_src_text"
+    mine_button = By.XPATH, "//*[@text='我的' and @resource-id='com.tpshop.malls:id/tab_txtv']"
 
-    back_button = By.CLASS_NAME, "android.widget.ImageButton"
-
-    def input_key_word(self, text):
-        self.input(self.search_edit_text, text)
-
-    def click_back(self):
-        self.click(self.back_button)
+    def click_mine_button(self):
+        self.click(self.mine_button)
